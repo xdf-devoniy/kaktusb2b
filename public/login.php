@@ -36,5 +36,8 @@ include __DIR__ . '/../app/Views/layout/header.php';
         </div>
         <button class="w-full bg-emerald-600 text-white py-2 rounded">Kirish</button>
     </form>
+    <p class="text-xs text-gray-500 mt-4">
+        Admin uchun yangi parol xeshi kerakmi? <a href="password_generator.php" class="text-brand-600 font-medium">Parol generatoridan</a> foydalaning.
+    </p>
 </div>
 <?php include __DIR__ . '/../app/Views/layout/footer.php'; ?>

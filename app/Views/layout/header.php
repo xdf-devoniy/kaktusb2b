@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= APP_NAME; ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Inter', 'ui-sans-serif', 'system-ui'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            500: '#059669',
+                            600: '#047857',
+                            700: '#065f46',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body class="bg-slate-100 min-h-screen">
