@@ -39,7 +39,7 @@ class Order
 
     public function find(int $id): ?array
     {
-        $stmt = $this->db->getConnection()->prepare('SELECT o.*, d.name AS dealer_name, d.phone AS dealer_phone FROM orders o JOIN dealers d ON d.id = o.dealer_id WHERE o.id = :id');
+        $stmt = $this->db->getConnection()->prepare('SELECT o.*, d.name AS dealer_name, d.phone AS dealer_phone, d.region AS dealer_region, d.telegram_name AS dealer_telegram, d.discount_percent, d.credit_limit FROM orders o JOIN dealers d ON d.id = o.dealer_id WHERE o.id = :id');
         $stmt->execute(['id' => $id]);
         $order = $stmt->fetch(PDO::FETCH_ASSOC);
         return $order ?: null;
@@ -47,7 +47,7 @@ class Order
 
     public function items(int $orderId): array
     {
-        $stmt = $this->db->getConnection()->prepare('SELECT oi.*, m.code AS material_code FROM order_items oi JOIN materials m ON m.id = oi.material_id WHERE order_id = :id');
+        $stmt = $this->db->getConnection()->prepare('SELECT oi.*, m.code AS material_code, m.color AS material_color, m.texture AS material_texture, m.roll_width_m AS material_roll_width FROM order_items oi JOIN materials m ON m.id = oi.material_id WHERE order_id = :id');
         $stmt->execute(['id' => $orderId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

@@ -34,6 +34,7 @@
             <nav class="space-x-3 text-sm">
                 <a href="dealers.php" class="text-gray-600 hover:text-black">Dilerlar</a>
                 <a href="orders.php" class="text-gray-600 hover:text-black">Buyurtmalar</a>
+                <a href="materials.php" class="text-gray-600 hover:text-black">Materiallar</a>
                 <a href="production_cutting.php" class="text-gray-600 hover:text-black">Kesish</a>
                 <a href="production_packing.php" class="text-gray-600 hover:text-black">Qadoqlash</a>
                 <a href="inventory_rolls.php" class="text-gray-600 hover:text-black">Rullar</a>

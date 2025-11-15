@@ -134,8 +134,11 @@ include __DIR__ . '/../app/Views/layout/header.php';
     </div>
 
     <div class="bg-white rounded shadow p-4">
-        <div class="flex items-center justify-between mb-3">
-            <h2 class="font-semibold">Xonalar</h2>
+        <div class="flex items-center justify-between mb-1">
+            <div>
+                <h2 class="font-semibold">Xonalar</h2>
+                <p class="text-xs text-gray-500">Kerakli material topilmasa, <a class="text-emerald-600" href="materials.php" target="_blank">materiallar oynasidan</a> qo'shing.</p>
+            </div>
             <button type="button" id="add-row" class="text-emerald-600">+ qator</button>
         </div>
         <div class="overflow-x-auto">
@@ -175,7 +178,10 @@ function createRow() {
         <td>
             <select name="item_material[]" class="border rounded px-2 py-1" required>
                 <option value="">Tanlang</option>
-                ${materials.map(m => `<option value="${m.id}">${m.code}</option>`).join('')}
+                ${materials.map(m => {
+                    const extra = [m.color, m.texture].filter(Boolean).join(', ');
+                    return `<option value="${m.id}">${m.code}${extra ? ' – ' + extra : ''}</option>`;
+                }).join('')}
             </select>
         </td>
         <td><input type="number" step="0.01" name="item_width[]" class="border rounded px-2 py-1 calc-field" required></td>
