@@ -4,6 +4,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+if (!defined('APP_PATH')) {
+    define('APP_PATH', realpath(__DIR__ . '/..'));
+}
+
 const DB_PATH = __DIR__ . '/../../database/kaktus.sqlite';
 const APP_NAME = 'Kaktus B2B';
 

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include APP_PATH . '/Views/layout/header.php';
+include __DIR__ . '/../app/Views/layout/header.php';
 ?>
 <div class="bg-white rounded-lg shadow p-6 max-w-2xl mx-auto">
     <h1 class="text-2xl font-semibold text-brand-600 mb-4">Parol generatori</h1>
@@ -45,4 +45,4 @@ include APP_PATH . '/Views/layout/header.php';
         <a href="login.php" class="text-brand-600 hover:text-brand-700">← Kirish sahifasiga qaytish</a>
     </div>
 </div>
-<?php include APP_PATH . '/Views/layout/footer.php'; ?>
+<?php include __DIR__ . '/../app/Views/layout/footer.php'; ?>
