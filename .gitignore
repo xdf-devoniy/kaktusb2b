@@ -1,0 +1,5 @@
+database/kaktus.sqlite
+public/uploads/sketches/*
+public/uploads/invoices/*
+!public/uploads/sketches/.gitkeep
+!public/uploads/invoices/.gitkeep
