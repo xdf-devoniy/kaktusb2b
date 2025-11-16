@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Order</title>
+</head>
+<body>
+    <h1>Create Order</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <h2>Rooms</h2>
+        {{ formset.management_form }}
+        {% for form in formset %}
+            {{ form.as_p }}
+        {% endfor %}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
