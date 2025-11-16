@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Details</title>
+</head>
+<body>
+    <h1>Order Details</h1>
+    <p><strong>Reference Number:</strong> {{ order.reference_number }}</p>
+    <p><strong>Dealer:</strong> {{ order.dealer.name }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Price:</strong> {{ order.price }}</p>
+
+    <h2>Rooms</h2>
+    <ul>
+        {% for room in order.rooms.all %}
+            <li>{{ room.name }} - {{ room.width }}m x {{ room.length }}m</li>
+        {% endfor %}
+    </ul>
+
+    {% if order.status == 'MULUOQAT' %}
+        <form action="{% url 'update_order_status' order.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Move to Dogovor</button>
+        </form>
+    {% endif %}
+
+    <a href="{% url 'order_list' %}">Back to Order List</a>
+</body>
+</html>
